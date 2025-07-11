@@ -41,4 +41,22 @@ export class ShowApiService implements ShowRepository {
       }),
     );
   }
+
+  async getMovieById(id: string): Promise<Show | null> {
+    const token = this.configService.get<string>('API_TOKEN');
+    const response = await firstValueFrom(
+      this.httpService.get<ShowApiDto>(this.API_URL + `/movie/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }),
+    );
+    return ShowMapper.fromApi(response.data, {
+      // business logic
+      type: 'movie',
+      isTop10: randomBoolean(response.data.id, [0, 1]),
+      isNetflixOriginal: randomBoolean(response.data.id, [5, 6, 8]),
+      status: randomShowStatus(response.data.id),
+    });
+  }
 }

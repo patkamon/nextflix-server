@@ -11,4 +11,8 @@ export class ShowController {
     return this.showService.getMovieList();
   }
 
+  @Get('movie/:id')
+  async getMovieById(@Param('id') id: string): Promise<Show | null> {
+    return this.showService.getMovieById(id);
+  }
 }
