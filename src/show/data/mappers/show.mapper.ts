@@ -11,10 +11,19 @@ export class ShowMapper {
       status: ShowStatus;
     },
   ): Show {
+    const IMAGE_BASE_URL = process.env.IMAGE_BASE_URL ?? '';
+    const posterUrl = dto.poster_path
+      ? `${IMAGE_BASE_URL}${dto.poster_path}`
+      : 'default-poster.jpg';
+    const backdropUrl = dto.backdrop_path
+      ? `${IMAGE_BASE_URL}${dto.backdrop_path}`
+      : 'default-backdrop.jpg';
+
     return {
       id: String(dto.id),
       name: dto.title,
-      image: dto.backdrop_path,
+      backdropImage: backdropUrl,
+      image: posterUrl,
       description: dto.overview,
       type: opts.type,
       status: opts.status,

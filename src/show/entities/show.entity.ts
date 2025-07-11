@@ -1,6 +1,7 @@
 export interface Show {
   id: string;
   name: string;
+  backdropImage: string;
   image: string;
   description?: string;
   type?: 'anime' | 'tv' | 'movie';
