@@ -5,9 +5,9 @@ import { firstValueFrom } from 'rxjs';
 
 import { ShowApiDto } from './data/dto/show.api.dto';
 import { ShowMapper } from './data/mappers/show.mapper';
-import { Show } from './entities/show.entity';
-import { ShowRepository } from './repositories/show.repository';
-import { randomBoolean, randomShowStatus } from './utils/random';
+import { Show } from './domain/entities/show.entity';
+import { ShowRepository } from './domain/repositories/show.repository';
+import { randomBoolean, randomShowStatus } from './domain/utils/random';
 
 @Injectable()
 export class ShowApiService implements ShowRepository {

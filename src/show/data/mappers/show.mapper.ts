@@ -1,4 +1,4 @@
-import { Show, ShowStatus, ShowType } from '../../entities/show.entity';
+import { Show, ShowStatus, ShowType } from '../../domain/entities/show.entity';
 import { ShowApiDto } from '../dto/show.api.dto';
 
 export class ShowMapper {

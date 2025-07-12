@@ -1,6 +1,6 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { ShowApiService } from './show.service';
-import { Show } from './entities/show.entity';
+import { Show } from './domain/entities/show.entity';
 
 @Controller('show')
 export class ShowController {

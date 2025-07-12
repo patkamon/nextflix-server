@@ -1,4 +1,4 @@
-import { Show } from '../entities/show.entity';
+import { Show } from '../../domain/entities/show.entity';
 
 export abstract class ShowRepository {
   abstract getMovieList(): Promise<Show[]>;

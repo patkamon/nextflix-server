@@ -1,4 +1,4 @@
-import { ShowStatus } from '../entities/show.entity';
+import { ShowStatus } from '../../domain/entities/show.entity';
 
 export function randomBoolean(id: string, chance: number[]): boolean {
   if (!id || id.length === 0) return false;
